@@ -1,0 +1,66 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="#/"> <i class="fa fa-home"></i> หน้าหลัก </a>
+  </li>
+  <li class="active"> Dashboard </li>
+</ul>
+
+<div class="well well-sm">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="form-inline">
+        <label for="">วันที่</label>
+        <input type="date" class="form-control" ng-model="startDate">
+        <button class="btn btn-primary" ng-click="getList()">
+          <i class="fa fa-search"></i> แสดงรายการ
+        </button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="pull-right">
+        <div class="btn-group">
+          <button class="btn btn-success" ng-click="sendAll()">
+            <i class="fa fa-share"></i> ส่งทั้งหมด
+          </button>
+          <button class="btn btn-default" ng-click="sendSelected()">
+            <i class="fa fa-share-alt"></i> ส่งเฉพาะที่เลือก ({{ selectedTotal | number}})
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ส่ง</th>
+      <th>เลขที่ส่งต่อ</th>
+      <th>HN</th>
+      <th>ชื่อ - สกุล</th>
+      <th>ส่งต่อไปที่</th>
+      <th>สิทธิการรักษา</th>
+      <th>เหตุผลการส่งต่อ</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="!person.length">
+      <td colspan=8"">ไม่พบรายการ</td>
+    </tr>
+    <tr ng-repeat="p in person" ng-if="person.length">
+      <td>
+        <input type="checkbox" checked="checked" ng-if="p.sendded" ng-click="toggleSend(p.vn)">
+        <input type="checkbox" ng-if="!p.sendded" ng-click="toggleSend(p.vn)">
+      </td>
+      <td>{{ p.refer_number }}</td>
+      <td>{{ p.hn }}</td>
+      <td>{{ p.fullname }}</td>
+      <td>{{ p.hospital }}</td>
+      <td>{{ p.pttype }}</td>
+      <td>{{ p.refer_cause }}</td>
+      <td><a href="#/info/{{p.vn}}" class="btn btn-primary"><i class="fa fa-info"></i></a></td>
+      <tr>
+  </tbody>
+</table>

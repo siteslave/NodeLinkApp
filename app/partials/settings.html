@@ -1,0 +1,90 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="#/"> <i class="fa fa-home"></i> หน้าหลัก </a>
+  </li>
+  <li class="active"> กำหนดค่า </li>
+</ul>
+<form action="#" name="frmSettings">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><i class="fa fa-database"></i> HOSxP Connection</div>
+        <div class="panel-body">
+          <div class="form-horizontal">
+            <div class="row">
+              <div class="col-md-9">
+                <label for="">ที่อยู่ HOSxP</label>
+                <input type="text" class="form-control" ng-model="config.db.host" placeholder="127.0.0.1">
+              </div>
+              <div class="col-md-3">
+                <label for="">พอร์ต</label>
+                <input type="number" class="form-control" ng-model="config.db.port" placeholder="3306">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">ชื่อฐานข้อมูล</label>
+                <input type="text" class="form-control" ng-model="config.db.database" placeholder="hos">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">ชื่อผู้ใช้งาน</label>
+                <input type="text" class="form-control" ng-model="config.db.user" placeholder="root">
+              </div>
+              <div class="col-md-6">
+                <label for="">รหัสผ่าน</label>
+                <input type="password" class="form-control" ng-model="config.db.password" placeholder="******">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><i class="fa fa-cloud"></i> Cloud Connection</div>
+        <div class="panel-body">
+          <div class="form-horizontal">
+            <div class="row">
+              <div class="col-md-9">
+                <label for="">Cloud Address</label>
+                <input type="text" class="form-control" ng-model="config.cloud.url" placeholder="http://yourcloudserver.com">
+              </div>
+              <div class="col-md-3">
+                <label for="">Port</label>
+                <input type="number" class="form-control" ng-model="config.cloud.port" placeholder="3000">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Username</label>
+                <input type="text" class="form-control" ng-model="config.cloud.user" placeholder="xxx">
+              </div>
+              <div class="col-md-6">
+                <label for="">Password</label>
+                <input type="password" class="form-control" ng-model="config.cloud.password" placeholder="****">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-primary" ng-click="doSave()">
+        <i class="fa fa-save"></i> บันทึกข้อมูล
+      </button>
+      <a href="#/" class="btn btn-default">
+        <i class="fa fa-home"></i> กลับหน้าหลัก
+      </a>
+    </div>
+  </div>
+
+</form>
