@@ -1,0 +1,16 @@
+{
+  "name": "NodeLinkApp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Satit Rianpit <siteslave@msn.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/siteslave/NodeLinkApp",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "ngprogress": "~1.1.2",
+    "font-awesome": "~4.4.0"
+  }
+}

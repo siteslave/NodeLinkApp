@@ -7,7 +7,7 @@
 
 <div class="well well-sm">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       <div class="form-inline">
         <label for="">วันที่</label>
         <input type="date" class="form-control" ng-model="startDate">
@@ -16,7 +16,7 @@
         </button>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="pull-right">
         <div class="btn-group">
           <button class="btn btn-success" ng-click="sendAll()">
@@ -36,31 +36,29 @@
   <thead>
     <tr>
       <th>ส่ง</th>
-      <th>เลขที่ส่งต่อ</th>
       <th>HN</th>
       <th>ชื่อ - สกุล</th>
-      <th>ส่งต่อไปที่</th>
-      <th>สิทธิการรักษา</th>
-      <th>เหตุผลการส่งต่อ</th>
-      <th></th>
+      <th>เพศ</th>
+      <th>ประเภทการมา</th>
+      <th>Trauma</th>
+      <th>ประเภทอุบัติเหตุ</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-if="!person.length">
       <td colspan=8"">ไม่พบรายการ</td>
     </tr>
-    <tr ng-repeat="p in person" ng-if="person.length">
+    <tr ng-repeat="p in person" ng-if="person.length" ng-class="{'success': p.sendded}">
       <td>
-        <input type="checkbox" checked="checked" ng-if="p.sendded" ng-click="toggleSend(p.vn)">
-        <input type="checkbox" ng-if="!p.sendded" ng-click="toggleSend(p.vn)">
+        <input type="checkbox" checked="checked" ng-if="p.checked" ng-click="toggleSend(p.vn)">
+        <input type="checkbox" ng-if="!p.checked" ng-click="toggleSend(p.vn)">
       </td>
-      <td>{{ p.refer_number }}</td>
       <td>{{ p.hn }}</td>
       <td>{{ p.fullname }}</td>
-      <td>{{ p.hospital }}</td>
-      <td>{{ p.pttype }}</td>
-      <td>{{ p.refer_cause }}</td>
-      <td><a href="#/info/{{p.vn}}" class="btn btn-primary"><i class="fa fa-info"></i></a></td>
+      <td>{{ p.sex_name }}</td>
+      <td>{{ p.visit_type_name }}</td>
+      <td>{{ p.trauma }}</td>
+      <td>{{ p.accident_type_name }}</td>
       <tr>
   </tbody>
 </table>
