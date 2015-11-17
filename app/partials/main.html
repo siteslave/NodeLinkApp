@@ -42,11 +42,13 @@
       <th>ประเภทการมา</th>
       <th>Trauma</th>
       <th>ประเภทอุบัติเหตุ</th>
+      <th>อื่นๆ</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr ng-if="!person.length">
-      <td colspan=8"">ไม่พบรายการ</td>
+      <td colspan="9">ไม่พบรายการ</td>
     </tr>
     <tr ng-repeat="p in person" ng-if="person.length" ng-class="{'success': p.sendded}">
       <td>
@@ -59,6 +61,13 @@
       <td>{{ p.visit_type_name }}</td>
       <td>{{ p.trauma }}</td>
       <td>{{ p.accident_type_name }}</td>
+      <td ng-if="p.hasInfo"><i class="fa fa-check-square-o"></i></td>
+      <td ng-if="!p.hasInfo"><i class="fa fa-square-o"></i></td>
+      <td>
+        <a href="#/info/{{ p.vn }}" class="btn btn-primary">
+          <i class="fa fa-edit"></i>
+        </a>
+      </td>
       <tr>
   </tbody>
 </table>

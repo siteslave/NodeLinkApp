@@ -4,3 +4,112 @@
   </li>
   <li class="active"> ข้อมูลส่งต่อ </li>
 </ul>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-info"></i> ข้อมูลผู้ประสบอุบัติเหตุ
+  </div>
+
+  <div class="panel-body">
+    <form action="#" class="form-horizontal">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="">ชื่อ - สกุล</label>
+          <input type="text" class="form-control" ng-model="fullname" disabled="disabled">
+        </div>
+        <div class="col-md-3">
+          <label for="">วันเกิด</label>
+          <input type="text" class="form-control" ng-model="birthday" disabled="disabled">
+        </div>
+        <div class="col-md-3">
+          <label for="">อายุ (ปี)</label>
+          <input type="number" class="form-control" ng-model="age" disabled="disabled">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-info"></i> รายละเอียดเพิ่มเติม
+  </div>
+  <div class="panel-body">
+    <form action="#" class="form-horizontal">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="">วันที่เกิด</label>
+          <input type="date" ng-model="adate" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label for="">เวลาที่เกิด</label>
+          <input type="time" ng-model="atime" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">จังหวัด</label>
+          <select ng-model="province"
+            ng-options="p.chwpart as p.name for p in provinces" class="form-control"
+            ng-change="changeChw()"
+          ></select>
+        </div>
+        <div class="col-md-4">
+          <label for="">อำเภอ</label>
+          <select ng-model="ampur"
+            ng-options="a.amppart as a.name for a in amppurs" class="form-control"
+            ng-change="changeAmp()"
+          ></select>
+        </div>
+        <div class="col-md-4">
+          <label for="">ตำบล</label>
+          <select ng-model="tambol"
+            ng-options="t.tmbpart as t.name for t in tambols" class="form-control"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">ยานยนต์ผู้บาดเจ็บ</label>
+          <select ng-model="vehicle1"
+            ng-options="v.export_code as v.accident_transport_type_name for v in vehicles" class="form-control"></select>
+        </div>
+        <div class="col-md-4">
+          <label for="">ยานยนต์คู่กรณี</label>
+          <select ng-model="vehicle2"
+            ng-options="v.export_code as v.accident_transport_type_name for v in vehicles" class="form-control"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="">ชื่อถนน</label>
+          <input type="text" ng-model="road" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="">บริเวณที่ใกล้เคียง</label>
+          <input type="text" ng-model="road_area" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="">ประเภทถนน</label>
+          <select ng-model="type_road" class="form-control">
+            <option value="0">ไม่ทราบ</option>
+            <option value="1">ทางหลวง</option>
+            <option value="2">ในเมือง</option>
+            <option value="3">ชนบท</option>
+          </select>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="panel-footer">
+    <div class="btn-group">
+      <button class="btn btn-success" type="button" ng-click="save()">
+        <i class="fa fa-save"></i> บันทึกข้อมูล
+      </button>
+      <a href="#/" class="btn btn-default" type="button">
+        <i class="fa fa-save"></i> กลับ
+      </a>
+    </div>
+
+  </div>
+</div>

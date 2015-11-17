@@ -1,5 +1,3 @@
-// window.$ = window.jQuery = require('../vendor/jquery/dist/jquery.js');
-// require('../vendor/Bootflat/bootflat/js/bootstrap.min.js');
 window.$ = window.jQuery = require('jquery');
 require('angular');
 require('angular-ui-router');
