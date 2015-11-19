@@ -1,3 +1,7 @@
+/* global _ */
+/* global angular */
+/* global moment */
+
 angular.module('app.controllers.Info', ['app.services.Info'])
 .controller('InfoController', function ($scope, $rootScope, $stateParams, InfoService) {
   $rootScope.menuId = 2;

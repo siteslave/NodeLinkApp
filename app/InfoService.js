@@ -1,3 +1,6 @@
+/* global fse */
+/* global ipc */
+
 angular.module('app.services.Info', [])
 .factory('InfoService', function ($q) {
 

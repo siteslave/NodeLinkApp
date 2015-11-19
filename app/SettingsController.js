@@ -1,3 +1,5 @@
+/* global fse */
+/* global ipc */
 angular.module('app.controllers.Settings', [])
 .controller('SettingsController', function ($scope, $state, $rootScope) {
   $rootScope.menuId = 2;
